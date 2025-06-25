@@ -5,84 +5,89 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite + TS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/src/style.css" />
   </head>
   <body>
-    <div id="register" class="form-container">
-      <h1 class="form-title">Create Account</h1>
-
-      <label for="register-username" class="form-label">Email Address</label>
-      <p class="email-message"></p>
-      <input
-        id="register-username"
-        type="email"
-        placeholder="Enter your email address"
-        class="form-input"
-      />
-
-      <label for="register-password" class="form-label">Password</label>
-      <p class="password-message"></p>
-      <input
-        id="register-password"
-        type="password"
-        placeholder="Create a strong password"
-        class="form-input"
-      />
-
-      <label for="name-input" class="form-label">Full Name</label>
-      <p class="name-message"></p>
-      <input
-        id="name-input"
-        type="text"
-        placeholder="Enter your full name"
-        class="form-input"
-      />
-
-      <button id="register-btn" class="form-button">Create Account</button>
+    <div class="list">
+      <div class="title">
+        <h2>Title</h2>
+        <a href="#">Airplane</a>
+        <a href="#">The Hangover</a>
+        <a href="#">Wedding Crashers</a>
+        <a href="#">Die Hard</a>
+        <a href="#">Terminator</a>
+        <a href="#">The Avengers</a>
+        <a href="#">The Notebook</a>
+        <a href="#">When Harry Met Sally</a>
+        <a href="#">Pretty Woman</a>
+        <a href="#">Pretty Woman</a>
+        <a href="#">The Sixth Sense</a>
+        <a href="#">Gone Girl</a>
+        <a href="#">The Others</a>
+        <a href="#">Spider Man 1</a>
+        <a href="#">Spider Man 2</a>
+        <a href="#">Spider Man 3</a>
+      </div>
+      <div class="genre">
+        <h3>Genre</h3>
+        <p>Comedy</p>
+        <p>Comedy</p>
+        <p>Comedy</p>
+        <p>Action</p>
+        <p>Action</p>
+        <p>Action</p>
+        <p>Romance</p>
+        <p>Romance</p>
+        <p>Romance</p>
+        <p>Thriller</p>
+        <p>Thriller</p>
+        <p>Thriller</p>
+        <p>Thriller</p>
+        <p>Thriller</p>
+        <p>Thriller</p>
+        <p>Thriller</p>
+      </div>
+      <div class="stock">
+        <h3>Stock</h3>
+        <p>5</p>
+        <p>10</p>
+        <p>15</p>
+        <p>5</p>
+        <p>10</p>
+        <p>15</p>
+        <p>5</p>
+        <p>10</p>
+        <p>15</p>
+        <p>5</p>
+        <p>10</p>
+        <p>15</p>
+        <p>100</p>
+        <p>100</p>
+        <p>100</p>
+        <p>100</p>
+      </div>
+      <div class="rate">
+        <h3>Rate</h3>
+        <p>2</p>
+        <p>2</p>
+        <p>2</p>
+        <p>2</p>
+        <p>2</p>
+        <p>2</p>
+        <p>2</p>
+        <p>2</p>
+        <p>2</p>
+        <p>2</p>
+        <p>2</p>
+        <p>2</p>
+        <p>20</p>
+        <p>20</p>
+        <p>20</p>
+        <p>20</p>
+      </div>
     </div>
-
-    <script>
-      const inputs = document.querySelectorAll(".form-input");
-      const button = document.querySelector(".form-button");
-
-      inputs.forEach((input) => {
-        input.addEventListener("focus", () => {
-          input.parentElement.querySelector(".form-label").style.color =
-            "#667eea";
-        });
-
-        input.addEventListener("blur", () => {
-          input.parentElement.querySelector(".form-label").style.color =
-            "#4a5568";
-        });
-      });
-
-      // Simulate form validation and submission
-      button.addEventListener("click", (e) => {
-        e.preventDefault();
-
-        // Add loading state
-        button.classList.add("loading");
-        button.textContent = "";
-
-        // Simulate API call
-        setTimeout(() => {
-          button.classList.remove("loading");
-          button.textContent = "Account Created!";
-          button.style.background =
-            "linear-gradient(135deg, #38a169 0%, #2f855a 100%)";
-
-          setTimeout(() => {
-            button.textContent = "Create Account";
-            button.style.background =
-              "linear-gradient(135deg, #667eea 0%, #764ba2 100%)";
-          }, 2000);
-        }, 2000);
-        inputs.forEach((input) => {
-          console.log(`Input ${input.id} value:`, input.value);
-          input.value = ""; // Clear input after submission          
-        });
-      });
-    </script>
   </body>
+  <script src="./src/main.ts"></script>
 </html>

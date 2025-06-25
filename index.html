@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + TS</title>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <div id="register" class="form-container">
+      <h1 class="form-title">Create Account</h1>
+
+      <label for="register-username" class="form-label">Email Address</label>
+      <p class="email-message"></p>
+      <input
+        id="register-username"
+        type="email"
+        placeholder="Enter your email address"
+        class="form-input"
+      />
+
+      <label for="register-password" class="form-label">Password</label>
+      <p class="password-message"></p>
+      <input
+        id="register-password"
+        type="password"
+        placeholder="Create a strong password"
+        class="form-input"
+      />
+
+      <label for="name-input" class="form-label">Full Name</label>
+      <p class="name-message"></p>
+      <input
+        id="name-input"
+        type="text"
+        placeholder="Enter your full name"
+        class="form-input"
+      />
+
+      <button id="register-btn" class="form-button">Create Account</button>
+    </div>
+
+    <script>
+      const inputs = document.querySelectorAll(".form-input");
+      const button = document.querySelector(".form-button");
+
+      inputs.forEach((input) => {
+        input.addEventListener("focus", () => {
+          input.parentElement.querySelector(".form-label").style.color =
+            "#667eea";
+        });
+
+        input.addEventListener("blur", () => {
+          input.parentElement.querySelector(".form-label").style.color =
+            "#4a5568";
+        });
+      });
+
+      // Simulate form validation and submission
+      button.addEventListener("click", (e) => {
+        e.preventDefault();
+
+        // Add loading state
+        button.classList.add("loading");
+        button.textContent = "";
+
+        // Simulate API call
+        setTimeout(() => {
+          button.classList.remove("loading");
+          button.textContent = "Account Created!";
+          button.style.background =
+            "linear-gradient(135deg, #38a169 0%, #2f855a 100%)";
+
+          setTimeout(() => {
+            button.textContent = "Create Account";
+            button.style.background =
+              "linear-gradient(135deg, #667eea 0%, #764ba2 100%)";
+          }, 2000);
+        }, 2000);
+        inputs.forEach((input) => {
+          console.log(`Input ${input.id} value:`, input.value);
+          input.value = ""; // Clear input after submission          
+        });
+      });
+    </script>
+  </body>
+</html>

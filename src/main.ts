@@ -7,20 +7,28 @@ const results = document.getElementById("results") as HTMLDivElement;
 searchBtn.addEventListener("click", () => {
   const query = searchInput.value.trim().toLowerCase();
 
+  // qidiruvga mos kinolarni olish
   const matchedMovies = movies.filter(movie =>
     movie.title.toLowerCase().includes(query)
   );
 
+  // Ekrandagi barcha kino natijalarini tozalash
+  results.innerHTML = "";
+
+  // Agar topilsa — faqat mos kelgan kinoni chiqaring
   if (matchedMovies.length > 0) {
-    results.innerHTML = matchedMovies.map(movie => `
-      <div style="margin-bottom: 10px;">
-        <strong>${movie.title}</strong><br>
-        Janr: ${movie.genre.name}<br>
-        Zaxirada: ${movie.numberInStock} dona<br>
-        Narxi: ${movie.dailyRentalRate} so'm / kun
-      </div>
-    `).join("");
+    matchedMovies.forEach(movie => {
+      const movieDiv = document.createElement("div");
+      movieDiv.innerHTML = `
+        <strong>${movie.title}</strong><br/>
+        Janr: ${movie.genre.name}<br/>
+        Zaxirada: ${movie.numberInStock}<br/>
+        Narxi: ${movie.dailyRentalRate} so'm/kun
+      `;
+      results.appendChild(movieDiv);
+    });
   } else {
-    results.innerHTML = `<p>Bunday kino mavjud emas</p>`;
+    // Topilmasa — "bunday kino mavjud emas"
+    results.innerHTML = "<p>Bunday kino mavjud emas</p>";
   }
 });

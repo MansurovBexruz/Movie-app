@@ -3,16 +3,9 @@
   padding: 0;
   box-sizing: border-box;
 }
-
 body {
-  font-family: 'Inter', sans-serif;
-  background: linear-gradient(135deg, #f0f4f8, #e2e8f0);
-  color: #2d3748;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  overflow: hidden;
+  font-family: 'Arial', sans-serif;
+  transition: background-color 0.3s ease;
 }
 
 @keyframes float {
@@ -264,4 +257,58 @@ body {
   to {
     transform: translate(-50%, -50%) rotate(360deg);
   }
+}
+.list{
+  display: flex;
+  justify-content: center;
+  position: relative;
+  left: 200px;
+  transition: left 0.3s ease;
+}
+.title{
+  display: flex;
+  flex-direction: column;
+  gap: 14.5px;
+}
+.genre{
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.rate{
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.stock{
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.pagination{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.list {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+.list > div {
+  flex: 1;
+}
+.list h2, .list h3 {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+.list a,
+.list p {
+  display: none;
+  margin: 4px 0;
+}
+.list a.active,
+.list p.active {
+  display: block;
 }

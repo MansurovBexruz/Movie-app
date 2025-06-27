@@ -19,24 +19,24 @@ body {
   flex-direction: column;
   gap: 11px;
 }
-.genre p{
-    margin: 0px;
+.genre p {
+  margin: 0px;
 }
 .stock {
   display: flex;
   flex-direction: column;
   gap: 11px;
 }
-.stock p{
-    margin: 0px;
+.stock p {
+  margin: 0px;
 }
 .rate {
   display: flex;
   flex-direction: column;
   gap: 11px;
 }
-.rate p{
-    margin: 0px;
+.rate p {
+  margin: 0px;
 }
 .list {
   display: flex;
@@ -52,25 +52,25 @@ body {
   flex-direction: column;
   gap: 11px;
 }
-.genre p{
-    margin: 0px;
+.genre p {
+  margin: 0px;
 }
 .stock {
   display: flex;
   flex-direction: column;
   gap: 11px;
 }
-.stock p{
-    margin: 0px;
+.stock p {
+  margin: 0px;
 }
 .rate {
   display: flex;
   flex-direction: column;
   gap: 11px;
 }
-.rate p{
-    margin: 0px;
-  font-family: 'Arial', sans-serif;
+.rate p {
+  margin: 0px;
+  font-family: "Arial", sans-serif;
   transition: background-color 0.3s ease;
 }
 
@@ -87,41 +87,40 @@ body {
   }
 }
 
-.search-movie{
+.search-movie {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 35px;
-
 }
-.list{
+.list {
   display: flex;
   justify-content: center;
   position: relative;
   left: 200px;
   transition: left 0.3s ease;
 }
-.title{
+.title {
   display: flex;
   flex-direction: column;
   gap: 14.5px;
 }
-.genre{
+.genre {
   display: flex;
   flex-direction: column;
   gap: 14px;
 }
-.rate{
+.rate {
   display: flex;
   flex-direction: column;
   gap: 14px;
 }
-.stock{
+.stock {
   display: flex;
   flex-direction: column;
   gap: 14px;
 }
-.pagination{
+.pagination {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -135,7 +134,8 @@ body {
 .list > div {
   flex: 1;
 }
-.list h2, .list h3 {
+.list h2,
+.list h3 {
   font-size: 1.2rem;
   font-weight: bold;
 }
@@ -147,4 +147,10 @@ body {
 .list a.active,
 .list p.active {
   display: block;
+}
+#login-app-link {
+  cursor: pointer;
+}
+#register-app-link {
+  cursor: pointer;
 }

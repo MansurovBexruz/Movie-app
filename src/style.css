@@ -4,6 +4,7 @@
   box-sizing: border-box;
 }
 body {
+  margin: 0;
   font-family: 'Arial', sans-serif;
   transition: background-color 0.3s ease;
 }
@@ -258,13 +259,6 @@ body {
     transform: translate(-50%, -50%) rotate(360deg);
   }
 }
-.list{
-  display: flex;
-  justify-content: center;
-  position: relative;
-  left: 200px;
-  transition: left 0.3s ease;
-}
 .title{
   display: flex;
   flex-direction: column;
@@ -282,26 +276,18 @@ body {
 }
 .stock{
   display: flex;
-  flex-direction: column;
-  gap: 14px;
++  gap: 14px;
 }
 .pagination{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
+margin: 20px 350px 0px 0px ;
 }
 .list {
+  margin-left: 500px;
   display: flex;
-  justify-content: space-between;
-  padding: 20px;
+
 }
 .list > div {
   flex: 1;
-}
-.list h2, .list h3 {
-  font-size: 1.2rem;
-  font-weight: bold;
 }
 .list a,
 .list p {

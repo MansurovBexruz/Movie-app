@@ -1,5 +1,3 @@
-
-// Movie data structure
 interface Movie {
   title: string;
   genre: string;
@@ -27,7 +25,6 @@ const movies: Movie[] = [
   { title: "Spider Man 3", genre: "Thriller", stock: 100, rate: 20 },
 ];
 
-// Search function
 function searchMovies(query: string): Movie[] {
   const searchTerm = query.toLowerCase().trim();
 
@@ -41,8 +38,6 @@ function searchMovies(query: string): Movie[] {
       movie.genre.toLowerCase().includes(searchTerm)
   );
 }
-
-// Show all movies
 function showAllMovies(): void {
   const listDiv = document.querySelector(".list") as HTMLDivElement;
   const titleLinks = listDiv.querySelectorAll(".title a");
@@ -50,7 +45,6 @@ function showAllMovies(): void {
   const stockPs = listDiv.querySelectorAll(".stock p");
   const ratePs = listDiv.querySelectorAll(".rate p");
 
-  // Show all movies
   titleLinks.forEach((link, index) => {
     const row = [
       titleLinks[index],
@@ -66,7 +60,6 @@ function showAllMovies(): void {
   });
 }
 
-// Display search results by filtering existing list
 function displayResults(results: Movie[]): void {
   const listDiv = document.querySelector(".list") as HTMLDivElement;
   const titleLinks = listDiv.querySelectorAll(".title a");
@@ -74,7 +67,6 @@ function displayResults(results: Movie[]): void {
   const stockPs = listDiv.querySelectorAll(".stock p");
   const ratePs = listDiv.querySelectorAll(".rate p");
 
-  // Hide all movies first
   titleLinks.forEach((link, index) => {
     const row = [
       titleLinks[index],
@@ -89,7 +81,6 @@ function displayResults(results: Movie[]): void {
     });
   });
 
-  // Show only matching movies
   if (results.length > 0) {
     results.forEach((movie) => {
       const movieIndex = movies.findIndex((m) => m.title === movie.title);
@@ -109,26 +100,22 @@ function displayResults(results: Movie[]): void {
     });
   }
 
-  // Clear results div
   const resultsDiv = document.getElementById("results") as HTMLDivElement;
   resultsDiv.innerHTML = "";
 }
 
-// Event listeners
 document.addEventListener("DOMContentLoaded", () => {
   const searchInput = document.getElementById(
     "searchInput"
   ) as HTMLInputElement;
   const searchBtn = document.getElementById("searchBtn") as HTMLButtonElement;
 
-  // Search button click event
   searchBtn.addEventListener("click", () => {
     const query = searchInput.value;
     const results = searchMovies(query);
     displayResults(results);
   });
 
-  // Enter key press event
   searchInput.addEventListener("keypress", (e: KeyboardEvent) => {
     if (e.key === "Enter") {
       const query = searchInput.value;
@@ -144,8 +131,31 @@ document.addEventListener("DOMContentLoaded", () => {
       const results = searchMovies(query);
       displayResults(results);
     } else {
-      // Show all movies when search is empty
       showAllMovies();
     }
   });
+
+  const loginLink = document.querySelector("#login-app-link") as HTMLAnchorElement;
+ 
+   loginLink.onclick = () => {
+   const movieApp = document.querySelector( ".movie-app") as HTMLTableSectionElement;
+   const registerSection = document.querySelector(".register-page") as HTMLTableSectionElement;
+   const loginSection = document.querySelector(".login-page") as HTMLTableSectionElement;
+ 
+   movieApp.style.display = "none";
+   registerSection.style.display = "none";
+   loginSection.style.display = "block";
+ };
+
+  const registerLink = document.querySelector("#register-app-link") as HTMLAnchorElement;
+
+  registerLink.onclick = () => {
+    const movieApp = document.querySelector(".movie-app") as HTMLTableSectionElement;
+    const registerSection = document.querySelector(".register-page") as HTMLTableSectionElement;
+    const loginSection = document.querySelector(".login-page") as HTMLTableSectionElement;
+
+    movieApp.style.display = "none";
+    loginSection.style.display = "none";
+    registerSection.style.display = "block";
+  };
 });

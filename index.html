@@ -24,22 +24,22 @@
         <li class="nav-item">
           <a
             class="nav-link active movie-link"
+            id="movie-app-link"
             aria-current="page"
             href="movie.html"
-            >Movie</a
-          >
+            >Movie</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link login-link" href="login.html">Login</a>
+          <a class="nav-link login-link" id="login-app-link">Login</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link register-link" href="register.html">Register</a>
+          <a class="nav-link register-link" id="register-app-link">Register</a>
         </li>
       </ul>
     </nav>
-
-    <!-- >>>>>>> Bexruz-branch -->
-    <div class="search-movie">
+  <div class="container">
+    <section class="movie-app">
+          <div class="search-movie">
       <input
         type="text"
         class="input-name"
@@ -149,6 +149,81 @@
         </li>
       </ul>
     </nav>
+    </section>
+
+    <section class="login-page" style="display: none;">
+    <div class="container d-flex flex-column gap-5 justify-content-center align-items-center">
+      <h1 class="page-name">Login page</h1>
+      <div class="login-page bg-light p-5 rounded shadow">
+        <div class="email mb-4">
+          <p class="form-label email-message">
+            Please enter your email address or username
+          </p>
+          <input
+            type="email"
+            id="login-email"
+            class="form-control"
+            placeholder="Email or Username"
+          />
+        </div>
+
+        <div class="password mb-4">
+          <p class="form-label password-message">Please enter your password</p>
+          <input
+            type="password"
+            id="login-password"
+            class="form-control"
+            placeholder="Password"
+          />
+        </div>
+
+        <button class="login-btn btn btn-primary w-100">Login</button>
+      </div>
+    </div>
+    </section>
+
+    <section class="register-page" style="display: none;">
+    <div class="container d-flex flex-column gap-5 justify-content-center align-items-center">
+      <h1 class="page-name">Register page</h1>
+      <div class="register-page bg-light p-5 rounded shadow">
+        <div class="email mb-4">
+          <p class="form-label email-message">
+            Please enter your email address
+          </p>
+          <input
+            type="email"
+            id="register-email"
+            class="form-control"
+            placeholder="Email or Username"
+          />
+        </div>
+
+        <div class="password mb-4">
+          <p class="form-label password-message">Please create password</p>
+          <input
+            type="password"
+            id="register-password"
+            class="form-control"
+            placeholder="Password"
+          />
+        </div>
+        <div class="password mb-4">
+          <p class="form-label password-message">
+            Please enter your name and last name password
+          </p>
+          <input
+            type="text"
+            id="register-password"
+            class="form-control"
+            placeholder="Password"
+          />
+        </div>
+
+        <button class="register-btn btn btn-primary w-100">Register</button>
+      </div>
+    </div>
+    </section>
+  </div>
   </body>
   <script src="./src/main.ts"></script>
   <script src="/src/login.ts"></script>

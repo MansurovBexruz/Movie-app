@@ -16,7 +16,7 @@ const emailRegex = /^[a-zA-Z]{4,}\d+@gmail\.com$/;
 const passwordRegex = /^(?=(?:.*\d){2,})(?=(?:.*[a-zA-Z]){4,}).{6,}$/;
 
 loginButton.addEventListener("click", () => {
-  const email = emailInput.value.trim(); // 👉 Click paytida qiymatlarni olamiz
+  const email = emailInput.value.trim(); 
   const password = passwordInput.value.trim();
 
   if (emailRegex.test(email) && passwordRegex.test(password)) {

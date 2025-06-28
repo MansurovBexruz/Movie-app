@@ -1,12 +1,9 @@
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
 }
 body {
   margin: 0;
-  font-family: 'Arial', sans-serif;
-  transition: background-color 0.3s ease;
+  font-family: "Arial", sans-serif;
 }
 
 @keyframes float {
@@ -22,18 +19,11 @@ body {
   }
 }
 
-.form-container {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(20px);
-  border-radius: 24px;
-  padding: 40px;
-  width: 100%;
-  max-width: 420px;
-  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.2);
-  position: relative;
-  z-index: 10;
-  animation: slideIn 0.8s ease-out;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+.search-movie {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 35px;
 }
 
 @keyframes slideIn {
@@ -259,32 +249,40 @@ body {
     transform: translate(-50%, -50%) rotate(360deg);
   }
 }
-.title{
+.row {
+  width: 800px;
+  margin: 10px;
+  margin-left: 50px;
+  position: absolute;
+}
+.title {
   display: flex;
   flex-direction: column;
   gap: 14.5px;
 }
-.genre{
+.genre {
   display: flex;
   flex-direction: column;
   gap: 14px;
 }
-.rate{
+.rate {
   display: flex;
   flex-direction: column;
   gap: 14px;
 }
-.stock{
+.stock {
   display: flex;
-+  gap: 14px;
+  flex-direction: column;
+  gap: 14px;
 }
-.pagination{
-margin: 20px 350px 0px 0px ;
+.pagination {
+  margin: 20px 120px 0px 0px;
 }
 .list {
-  margin-left: 500px;
   display: flex;
-
+  width: 1000px;
+  margin-left: 480px;
+  margin-top: 20px;
 }
 .list > div {
   flex: 1;
@@ -297,4 +295,18 @@ margin: 20px 350px 0px 0px ;
 .list a.active,
 .list p.active {
   display: block;
+}
+#login-app-link {
+  cursor: pointer;
+}
+#register-app-link {
+  cursor: pointer;
+}
+.container {
+  position: absolute;
+  right: 300px;
+  top: 110px;
+}
+.navbar {
+  padding-left: 50px;
 }
